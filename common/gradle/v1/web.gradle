@@ -1,0 +1,28 @@
+apply plugin: 'war'
+
+webAppDirName = 'src/main/webapp'
+
+war {
+    archiveName = "${baseName}.${extension}"
+}
+
+dependencies {
+    providedCompile "javax.servlet:javax.servlet-api:${servletVersion}"
+    providedCompile "javax.servlet.jsp:jsp-api:${jspVersion}"
+}
+
+clean {
+    delete project.file("${webAppDirName}/WEB-INF/classes"), project.file("${webAppDirName}/WEB-INF/lib")
+}
+
+eclipse {
+    wtp {
+        component {
+            contextPath = '/'
+        }
+        facet {
+            facet name: 'jst.web', 'version': '3.0'
+            facet name: 'jst.java', 'version': javaVersion
+        }
+    }
+}

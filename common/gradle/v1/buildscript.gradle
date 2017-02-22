@@ -1,0 +1,8 @@
+ext {
+    buildscriptBasePath = "${project.rootDir.absolutePath}/common/gradle/v1"
+    javaGradle = "${buildscriptBasePath}/java.gradle"
+    jpaGradle = "${buildscriptBasePath}/jpa.gradle"
+    jpaSchemaGenerateGradle = "${buildscriptBasePath}/jpa_schema_generate.gradle"
+    webGradle = "${buildscriptBasePath}/web.gradle"
+    securityGradle = "${buildscriptBasePath}/security.gradle"
+}

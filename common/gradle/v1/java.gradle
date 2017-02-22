@@ -1,0 +1,249 @@
+apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'propdeps'
+
+ext {
+    javaVersion = '1.7'
+    javaEncoding = 'UTF-8'
+    tmpDir = System.getProperty('java.io.tmpdir')
+
+    junitVersion = '4.11'
+    mockitoVersion = '1.9.5'
+    festVersion = '2.0M10'
+
+    springframeworkVersion = '4.1.5.RELEASE'
+    springDataJpaVersion = '1.7.0.RELEASE'
+    queryDslVersion = '3.4.2'
+    hibernateVersion = '4.2.15.Final'
+    hibernateAnnotationVersion = '4.0.1.Final'
+    validatorVersion = '4.1.0.Final'
+
+    slf4jVersion = '1.7.6'
+
+    lombokVersion = '1.12.6'
+
+    servletVersion = "3.0.1"
+    jspVersion = "2.2"
+    handlebarsVersion = '1.3.2'
+
+
+    libsPath = "${project.rootDir.absolutePath}/common/libs/"
+    infraLibName = 'sth-infra'
+    infraSecurityLibName = 'sth-infra-security'
+}
+
+ext {
+    baseProvidedDeps = [
+            'webContainers': [
+                    "javax.servlet:javax.servlet-api:${servletVersion}",
+                    "javax.servlet.jsp:jsp-api:${jspVersion}"
+            ]
+    ]
+}
+
+sourceSets {
+    test {
+        java {
+            srcDir "${project.projectDir}/src/springtest/java"
+        }
+        resources {
+            srcDir "${project.projectDir}/src/springtest/resources"
+        }
+    }
+}
+
+List springframeworks = [
+    "org.springframework:spring-core:${springframeworkVersion}",
+    "org.springframework:spring-context:${springframeworkVersion}",
+    "org.springframework:spring-context-support:${springframeworkVersion}",
+    "org.springframework:spring-jdbc:${springframeworkVersion}",
+    "org.springframework:spring-beans:${springframeworkVersion}",
+    "org.springframework:spring-webmvc:${springframeworkVersion}",
+    "org.springframework:spring-tx:${springframeworkVersion}",
+    "org.springframework:spring-orm:${springframeworkVersion}",
+    "org.springframework:spring-aop:${springframeworkVersion}",
+    "org.springframework:spring-aspects:${springframeworkVersion}",
+    "org.springframework:spring-expression:${springframeworkVersion}",
+//        "org.springframework:spring-oxm:${springframeworkVersion}",
+    "org.springframework:spring-test:${springframeworkVersion}"
+
+]
+
+List apacheCommons = [
+    'commons-io:commons-io:2.4',
+    'org.apache.commons:commons-lang3:3.3.2',
+    'commons-codec:commons-codec:1.8',
+    'commons-fileupload:commons-fileupload:1.3',
+    'commons-httpclient:commons-httpclient:3.1',
+    'commons-net:commons-net:3.3',
+    'commons-collections:commons-collections:3.2.1',
+    'commons-beanutils:commons-beanutils:1.8.3',
+    'commons-validator:commons-validator:1.4.0',
+    'org.apache.commons:commons-math:2.2',
+    'org.apache.commons:commons-compress:1.5',
+    'org.apache.commons:commons-io:1.3.2',
+    'org.apache.commons:commons-pool2:2.3',
+    'org.apache.commons:commons-dbcp2:2.0.1'
+]
+
+List loggers = [
+    "org.slf4j:slf4j-api:${slf4jVersion}",
+    "org.slf4j:slf4j-log4j12:${slf4jVersion}",
+    'log4j:log4j:1.2.17'
+]
+
+List baiduLogger = [
+    'com.baidu.bae:baev3-sdk:1.0.1',
+    'org.apache.thrift:libthrift:0.9.2'
+]
+
+List lombokList = [
+    "org.projectlombok:lombok:${lombokVersion}"
+]
+
+List json = [
+//        'org.codehaus.jackson:jackson-mapper-asl:1.9.13',
+//        'org.codehaus.jackson:jackson-core-asl:1.9.13',
+    'com.fasterxml.jackson.core:jackson-databind:2.4.2',
+    'com.fasterxml.jackson.core:jackson-annotations:2.4.2',
+    'com.fasterxml.jackson.core:jackson-core:2.4.2',
+    'com.fasterxml.jackson.datatype:jackson-datatype-hibernate4:2.4.2'
+]
+
+//    List xml = [
+//        'javax.xml:jaxb-impl:2.2.6',
+//        'javax.xml.bind:jaxb-api:2.2.6'
+//    ]
+
+List junit = [
+    "junit:junit:${junitVersion}"
+]
+
+List connectionPools = [
+    'com.jolbox:bonecp-spring:0.8.0.RELEASE',
+    'commons-dbcp:commons-dbcp:1.4'
+]
+
+List jdbcDrivers = [
+    'mysql:mysql-connector-java:5.1.16'
+]
+
+List jpa = [
+    "org.hibernate:hibernate-core:${hibernateVersion}",
+    "org.hibernate:hibernate-entitymanager:${hibernateVersion}",
+    "org.springframework.data:spring-data-jpa:${springDataJpaVersion}",
+    "com.mysema.querydsl:querydsl-core:${queryDslVersion}",
+    "com.mysema.querydsl:querydsl-jpa:${queryDslVersion}"
+]
+
+List javaee = [
+        "javax.inject:javax.inject:1"
+]
+
+List validator = [
+    "org.hibernate:hibernate-validator:${validatorVersion}",
+    "org.hibernate:hibernate-validator-annotation-processor:${validatorVersion}"
+]
+
+List handlebars = [
+    "com.github.jknack:handlebars:${handlebarsVersion}",
+    "com.github.jknack:handlebars-springmvc:${handlebarsVersion}",
+    "com.github.jknack:handlebars-jackson2:${handlebarsVersion}",
+    "com.github.jknack:handlebars-helpers:${handlebarsVersion}",
+    "com.github.jknack:handlebars-guava-cache:${handlebarsVersion}"
+]
+
+sourceCompatibility = javaVersion
+targetCompatibility = javaVersion
+[compileJava, compileTestJava]*.sourceCompatibility = javaVersion
+[compileJava, compileTestJava]*.targetCompatibility = javaVersion
+[compileJava, compileTestJava]*.options*.encoding = javaEncoding
+
+configurations {
+    all.collect { configuration ->
+        configuration.exclude group: 'commons-logging', module: 'commons-logging'
+//            configuration.exclude group: 'log4j', module: 'log4j'
+//            configuration.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+        configuration.exclude group: 'org.slf4j', module: 'slf4j-jcl'
+        configuration.exclude group: 'org.slf4j', module: 'slf4j-jdk14'
+    }
+    all {
+        resolutionStrategy {
+            cacheChangingModulesFor 0, 'seconds'
+            cacheDynamicVersionsFor 0, 'seconds'
+        }
+    }
+}
+
+dependencies {
+    compile springframeworks
+    compile apacheCommons
+    compile lombokList
+    compile loggers
+    compile baiduLogger
+    compile json
+//        compile xml
+    compile connectionPools
+    compile jdbcDrivers
+    compile jpa
+    compile javaee
+    compile handlebars
+    compile "org.modelmapper:modelmapper:0.7.2"
+    compile baseProvidedDeps.webContainers
+    //compile fileTree(dir: "${libsPath}", include: 'vera.jar')
+
+    testCompile junit
+    testCompile "org.mockito:mockito-core:${mockitoVersion}"
+    testCompile ('httpunit:httpunit:1.7') {
+        exclude group: 'javax.servlet', module: 'servlet-api'
+    }
+    testCompile "org.easytesting:fest-assert-core:${festVersion}"
+    testCompile 'org.mockftpserver:MockFtpServer:2.4'
+}
+
+eclipse {
+    classpath {
+        downloadSources = true
+        defaultOutputDir = file("${buildDir}/eclipse-bin/main")
+
+        file.whenMerged { cp ->
+            def testSrcs = cp.entries.findAll {
+                it instanceof org.gradle.plugins.ide.eclipse.model.SourceFolder && it.path.matches(/src\/[a-z]*test\/.*/)
+             }
+             testSrcs.each {
+                it.output = project.relativePath("${buildDir}/eclipse-bin/test")
+                it.exported = false // Deployment Assembly
+             }
+             cp.entries.unique()
+        }
+    }
+}
+
+// delombok & javadoc
+configurations {
+    lombok
+}
+
+dependencies {
+    lombok "org.projectlombok:lombok:${lombokVersion}"
+}
+
+task delombok {
+    ext.srcJava = 'src/main/java'
+    ext.srcDelomboked = "${buildDir}/src-delomboked"
+
+    inputs.files file(srcJava)
+    outputs.dir file(srcDelomboked)
+
+    doLast {
+        ant.taskdef(name: 'delombok', classname: 'lombok.delombok.ant.DelombokTask', classpath: configurations.lombok.asPath)
+        ant.delombok(from: srcJava, to: srcDelomboked, verbose: false, encoding: javaEncoding, classpath: configurations.compile.asPath)
+    }
+}
+
+javadoc {
+    dependsOn delombok
+    source = fileTree(dir: delombok.srcDelomboked, includes: ['**/*.java'])
+    options.encoding = javaEncoding
+    options.charSet = javaEncoding
+}

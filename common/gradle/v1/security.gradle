@@ -1,0 +1,9 @@
+ext {
+    springSecurityVersion = '4.0.0.RC2'
+}
+
+dependencies {
+    compile "org.springframework.security:spring-security-web:${springSecurityVersion}"
+    compile "org.springframework.security:spring-security-config:${springSecurityVersion}"
+    compile "org.springframework.security:spring-security-core:${springSecurityVersion}"
+}

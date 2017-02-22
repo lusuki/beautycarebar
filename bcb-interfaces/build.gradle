@@ -1,0 +1,8 @@
+// 写这个模块的单独的依赖和配置
+
+dependencies {
+    compile project(':bcb-core')
+}
+
+apply from: securityGradle
+apply from: webGradle

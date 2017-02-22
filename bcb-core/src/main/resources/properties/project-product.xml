@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>product</comment>
+
+    <!-- database -->
+    <entry key="sth.mysql.jdbc.url"></entry>
+    <entry key="sth.mysql.jdbc.username"></entry>
+    <entry key="sth.mysql.jdbc.password"></entry>
+    <entry key="sth.mysql.jdbc.partitionCount">1</entry>
+    <entry key="sth.mysql.jdbc.maxTotal">100</entry>
+    <entry key="sth.mysql.jdbc.minIdle">10</entry>
+    <entry key="sth.mysql.jdbc.timeBetweenEvictionRunsMillis">100000</entry>
+    <entry key="sth.mysql.jdbc.minEvictableIdleTimeMillis">10000</entry>
+
+    <!-- 新建员工默认密码 -->
+    <entry key="sth.new.staff.defaultPassword">123456</entry>
+</properties>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <!--web页面, session会在10分钟过期 -->
+    <entry key="security.web.session.timeoutsec">600</entry>
+    <!--其他app调用, session会10分钟过期 -->
+    <entry key="security.api.session.timeoutsec">600</entry>
+    <!-- 用户尝试登陆最大次数 (会被锁)-->
+    <entry key="security.user.max.login.retry.count">5</entry>
+    <!-- 登录页面地址 -->
+    <entry key="security.login.form.url">login</entry>
+    <!-- 权限受限显示页面 -->
+    <entry key="security.access.denied.page.url">error</entry>
+    <!-- 单session登陆 -->
+    <entry key="security.multi.login.validation">true</entry>
+</properties>

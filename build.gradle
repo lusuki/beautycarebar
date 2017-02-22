@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        maven {
+            url="http://maven.oschina.net/content/groups/public/"
+        }
+        maven {
+            url="http://repo.spring.io/libs-milestone"
+        }
+	maven { url "https://repo.spring.io/plugins-release" }
+    }
+    dependencies {
+        classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.5'
+        classpath 'io.github.divinespear:jpa-schema-gradle-plugin:0.1.10'
+    }
+}
+
+apply from: "${project.rootDir.absolutePath}/common/gradle/v1/buildscript.gradle"
+
+ext {
+    infraLibVersion = '0.1.10.RELEASE'
+}
+
+subprojects {
+    project.group = 'com.shm.bcb'
+    project.version = '0.1.10.RELEASE'
+
+    repositories {
+        maven {
+            url="http://maven.oschina.net/content/groups/public/"
+        }
+        maven {
+            url="http://repo.spring.io/libs-milestone"
+        }
+        maven {
+            url="http://maven.duapp.com/nexus/content/repositories/releases/"
+        }
+	maven { url "https://repo.spring.io/plugins-release" }
+    }
+
+    apply from: javaGradle
+}
