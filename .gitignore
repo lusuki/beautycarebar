@@ -14,3 +14,13 @@ project/
 out/
 .metadata
 classes/
+bin/
+build/
+*/src/generated/
+.DS_Store
+*.log
+log/
+logs/
+war/
+gwt-unitCache/
+tomcat/
