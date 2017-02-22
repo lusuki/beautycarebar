@@ -1,0 +1,16 @@
+.project
+.classpath
+*.prefs
+.springBeans
+.settings
+target/
+tmp
+.idea/
+*.iml
+*.ipr
+*.iws
+project/
+.gradle/
+out/
+.metadata
+classes/
