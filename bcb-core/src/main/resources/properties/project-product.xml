@@ -4,15 +4,12 @@
     <comment>product</comment>
 
     <!-- database -->
-    <entry key="sth.mysql.jdbc.url"></entry>
-    <entry key="sth.mysql.jdbc.username"></entry>
-    <entry key="sth.mysql.jdbc.password"></entry>
-    <entry key="sth.mysql.jdbc.partitionCount">1</entry>
-    <entry key="sth.mysql.jdbc.maxTotal">100</entry>
-    <entry key="sth.mysql.jdbc.minIdle">10</entry>
-    <entry key="sth.mysql.jdbc.timeBetweenEvictionRunsMillis">100000</entry>
-    <entry key="sth.mysql.jdbc.minEvictableIdleTimeMillis">10000</entry>
-
-    <!-- 新建员工默认密码 -->
-    <entry key="sth.new.staff.defaultPassword">123456</entry>
+    <entry key="bcb.mysql.jdbc.url"></entry>
+    <entry key="bcb.mysql.jdbc.username"></entry>
+    <entry key="bcb.mysql.jdbc.password"></entry>
+    <entry key="bcb.mysql.jdbc.partitionCount">1</entry>
+    <entry key="bcb.mysql.jdbc.maxTotal">100</entry>
+    <entry key="bcb.mysql.jdbc.minIdle">10</entry>
+    <entry key="bcb.mysql.jdbc.timeBetweenEvictionRunsMillis">100000</entry>
+    <entry key="bcb.mysql.jdbc.minEvictableIdleTimeMillis">10000</entry>
 </properties>

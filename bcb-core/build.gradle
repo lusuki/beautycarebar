@@ -4,5 +4,9 @@ dependencies {
     compile fileTree(dir: "${libsPath}", include: "${infraLibName}-${infraLibVersion}.jar")
 }
 
+ext {
+    persistenceUnitNames=['bcb']
+}
+
 apply from: jpaGradle
 apply from: jpaSchemaGenerateGradle

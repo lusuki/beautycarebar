@@ -4,22 +4,13 @@
     <comment>develop</comment>
 
     <!-- database -->
-    <entry key="sth.mysql.jdbc.url"></entry>
-    <entry key="sth.mysql.jdbc.username"></entry>
-    <entry key="sth.mysql.jdbc.password"></entry>
+    <entry key="bcb.mysql.jdbc.url">jdbc:mysql://localhost:3306/bcb?autoReconnect=true&amp;connectTimeout=60000&amp;socketTimeout=60000&amp;useUnicode=true&amp;characterEncoding=UTF8</entry>
+    <entry key="bcb.mysql.jdbc.username">dev</entry>
+    <entry key="bcb.mysql.jdbc.password">123456</entry>
 
-<!--
-    <entry key="sth.mysql.jdbc.url">jdbc:mysql://localhost:3306/sth_0118?autoReconnect=true&amp;connectTimeout=60000&amp;socketTimeout=60000&amp;useUnicode=true&amp;characterEncoding=UTF8</entry>
-    <entry key="sth.mysql.jdbc.username">root</entry>
-    <entry key="sth.mysql.jdbc.password">123456</entry>
- -->   
-    
-    <entry key="sth.mysql.jdbc.partitionCount">1</entry>
-    <entry key="sth.mysql.jdbc.maxTotal">30</entry>
-    <entry key="sth.mysql.jdbc.minIdle">10</entry>
-    <entry key="sth.mysql.jdbc.timeBetweenEvictionRunsMillis">100000</entry>
-    <entry key="sth.mysql.jdbc.minEvictableIdleTimeMillis">10000</entry>
-
-    <!-- 新建员工默认密码 -->
-    <entry key="sth.new.staff.defaultPassword">123456</entry>
+    <entry key="bcb.mysql.jdbc.partitionCount">1</entry>
+    <entry key="bcb.mysql.jdbc.maxTotal">30</entry>
+    <entry key="bcb.mysql.jdbc.minIdle">10</entry>
+    <entry key="bcb.mysql.jdbc.timeBetweenEvictionRunsMillis">100000</entry>
+    <entry key="bcb.mysql.jdbc.minEvictableIdleTimeMillis">10000</entry>
 </properties>
