@@ -18,6 +18,7 @@ bin/
 build/
 */src/generated/
 .DS_Store
+*/.DS_Store
 *.log
 log/
 logs/
