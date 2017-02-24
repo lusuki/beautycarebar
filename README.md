@@ -33,4 +33,4 @@
 2. Develop service and pojo under bcb-core/src/main/java/com/shm/bcb/service
 3. Develop rest controller under bcb-interfaces/src/main/java/com/shm/bcb/service/api if you want to export as rest api
 4. Develop web controller under bcb-interfaces/src/main/java/com/shm/bcb/service/web and web page (*.hbs) under bcb-interfaces/src/main/webapp/WEB-INF/views, if you want to export a web page.
-5. Please task 'Hello' as example
+5. Please take 'Hello' as example
