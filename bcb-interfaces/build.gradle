@@ -6,3 +6,7 @@ dependencies {
 
 apply from: securityGradle
 apply from: webGradle
+
+war {
+    archiveName = 'bcb.war'
+}
